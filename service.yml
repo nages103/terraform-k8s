@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: terraform-service
+  namespace: terraform
+spec:
+  selector:
+    app: terraform-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+  
